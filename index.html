@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathe</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #5f7a7b, #3c4f50);
+            color: white;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .header {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .main-text {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .diamond {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(to bottom right, #4cd964, #5ac8fa);
+            transform: rotate(45deg);
+            margin: 0 auto 40px;
+            box-shadow: 0 0 20px rgba(76, 217, 100, 0.5);
+        }
+        .login-button {
+            background-color: #4cd964;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .create-account {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+        .footer {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Breathe.</div>
+            <div class="subtitle">Bir Fibabanka İştirakidir</div>
+            <div class="main-text">Opsiyon evreninde kolayca nefes al.</div>
+        </div>
+        <div class="diamond"></div>
+        <button class="login-button">Fibabankayla Giriş Yap</button>
+        <a href="#" class="create-account">Hesap Oluştur</a>
+        <div class="footer">
+            Tüm yatırımlarda olduğu gibi, anaparanız bir risk altında bulunmaktadır
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.login-button').on('click', function() {
+                alert('Giriş işlemi başlatılıyor...');
+            });
+
+            $('.create-account').on('click', function(e) {
+                e.preventDefault();
+                alert('Hesap oluşturma sayfasına yönlendiriliyorsunuz...');
+            });
+        });
+    </script>
+</body>
+</html>
