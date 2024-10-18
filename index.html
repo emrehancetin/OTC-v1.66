@@ -3,101 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breathe</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Breathe - Fibabanka</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body, html {
-            height: 100%;
+        body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #5f7a7b, #3c4f50);
-            color: white;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .header {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #7ba9b9, #3f6d7f);
+            color: #fff;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0.5em 0;
         }
         .logo {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .subtitle {
-            font-size: 14px;
-            margin-bottom: 20px;
+        .logo img {
+            margin: 0 10px;
         }
-        .main-text {
-            font-size: 24px;
-            margin-bottom: 40px;
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 2em;
         }
-        .diamond {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(to bottom right, #4cd964, #5ac8fa);
-            transform: rotate(45deg);
-            margin: 0 auto 40px;
-            box-shadow: 0 0 20px rgba(76, 217, 100, 0.5);
-        }
-        .login-button {
-            background-color: #4cd964;
+        .button {
+            background-color: #39b54a;
             color: white;
             border: none;
-            padding: 15px;
-            width: 100%;
-            font-size: 18px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
             cursor: pointer;
+            margin: 1em 0;
         }
-        .create-account {
-            text-align: center;
-            color: white;
-            text-decoration: none;
+        .button:hover {
+            background-color: #2f8f3b;
         }
-        .footer {
-            font-size: 12px;
-            text-align: center;
-            margin-top: 20px;
+        .secondary-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .secondary-button:hover {
+            color: #ddd;
+        }
+        .warning {
+            font-size: 0.8rem;
+            margin-top: 1.5em;
+            color: #ccc;
+        }
+        .logo-icon {
+            width: 100px;
+            height: 100px;
+            margin: 2em 0;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">Breathe.</div>
-            <div class="subtitle">Bir Fibabanka İştirakidir</div>
-            <div class="main-text">Opsiyon evreninde kolayca nefes al.</div>
+    <div class="header">
+        <p>9:41</p>
+    </div>
+    <div class="content">
+        <h1>Breathe.</h1>
+        <div class="logo">
+            <p>Bir</p>
+            <img src="https://fibabanka.com.tr/img/fibabanka_logo.png" alt="Fibabanka Logo" height="20">
+            <p>İştirakidir</p>
         </div>
-        <div class="diamond"></div>
-        <button class="login-button">Fibabankayla Giriş Yap</button>
-        <a href="#" class="create-account">Hesap Oluştur</a>
-        <div class="footer">
-            Tüm yatırımlarda olduğu gibi, anaparanız bir risk altında bulunmaktadır
+        <p class="description">Opsiyon evreninde kolayca nefes al.</p>
+        <div class="logo-icon">
+            <img src="https://example.com/logo-placeholder.png" alt="Logo Icon">
         </div>
+        <button class="button" id="loginButton">Fibabankayla Giriş Yap</button>
+        <button class="secondary-button" id="signupButton">Hesap Oluştur</button>
+        <p class="warning">Tüm yatırımlarda olduğu gibi, anaparanız bir risk altında bulunmaktadır.</p>
     </div>
 
     <script>
         $(document).ready(function() {
-            $('.login-button').on('click', function() {
-                alert('Giriş işlemi başlatılıyor...');
+            $('#loginButton').on('click', function() {
+                alert('Fibabanka ile giriş yapılıyor...');
             });
 
-            $('.create-account').on('click', function(e) {
-                e.preventDefault();
+            $('#signupButton').on('click', function() {
                 alert('Hesap oluşturma sayfasına yönlendiriliyorsunuz...');
             });
         });
     </script>
 </body>
 </html>
+
