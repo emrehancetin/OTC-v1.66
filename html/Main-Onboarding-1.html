@@ -61,6 +61,10 @@
             margin-bottom: 20px;
             cursor: pointer;
         }
+        .button a{
+            color: white;
+            text-decoration: none;
+        }
         .skip {
             text-align: center;
             color: white;
@@ -80,7 +84,7 @@
         <div class="content">
             <!-- Content for each step will go here -->
         </div>
-        <button class="button">Devam Et</button>
+        <button class="button"><a href="Main-Onboarding-2.html">Devam Et</a></button>
         <a href="#" class="skip">Tanıtımı Geç</a>
     </div>
 
@@ -88,14 +92,6 @@
         $(document).ready(function() {
             let currentStep = 1;
 
-            $('.button').on('click', function() {
-                if (currentStep < 3) {
-                    currentStep++;
-                    updateProgress();
-                } else {
-                    alert('Onboarding tamamlandı!');
-                }
-            });
 
             $('.skip').on('click', function(e) {
                 e.preventDefault();

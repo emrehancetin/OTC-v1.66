@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .progress {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .step.active {
+            background-color: #2ecc71;
+        }
+        .step.completed {
+            background-color: #2ecc71;
+        }
+        .step.completed::after {
+            content: "\2713";
+            color: white;
+        }
+        .line {
+            width: 30px;
+            height: 2px;
+            background-color: #34495e;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .button a {
+            color: white;
+            text-decoration: none;
+        }
+        .back {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .back a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="progress">
+            <div class="step completed"></div>
+            <div class="line"></div>
+            <div class="step active">2</div>
+            <div class="line"></div>
+            <div class="step">3</div>
+        </div>
+        <div class="content">
+            <!-- Content for each step will go here -->
+        </div>
+        <button class="button"><a href="Main-Onboarding-3.html">Devam Et</a></button>
+        <a class="back" href="Main-Onboarding-1.html">Geri Dön</a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let currentStep = 2;
+
+            $('.button').on('click', function() {
+                if (currentStep < 3) {
+                    currentStep++;
+                    updateProgress();
+                } else {
+                    alert('Onboarding tamamlandı!');
+                }
+            });
+
+            $('.back').on('click', function() {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateProgress();
+                }
+            });
+
+            function updateProgress() {
+                $('.step').removeClass('active completed');
+                for (let i = 1; i <= 3; i++) {
+                    if (i < currentStep) {
+                        $(`.step:nth-child(${2*i-1})`).addClass('completed');
+                    } else if (i === currentStep) {
+                        $(`.step:nth-child(${2*i-1})`).addClass('active').text(i);
+                    } else {
+                        $(`.step:nth-child(${2*i-1})`).text(i);
+                    }
+                }
+                
+                if (currentStep === 1) {
+                    $('.back').text('Tanıtımı Geç').off('click').on('click', function() {
+                        alert('Tanıtım geçildi!');
+                    });
+                } else {
+                    $('.back').text('Geri Dön').off('click').on('click', function() {
+                        currentStep--;
+                        updateProgress();
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
