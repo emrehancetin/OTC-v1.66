@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .progress {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .step.active {
+            background-color: #2ecc71;
+        }
+        .line {
+            width: 30px;
+            height: 2px;
+            background-color: #34495e;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .skip {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="progress">
+            <div class="step active">1</div>
+            <div class="line"></div>
+            <div class="step">2</div>
+            <div class="line"></div>
+            <div class="step">3</div>
+        </div>
+        <div class="content">
+            <!-- Content for each step will go here -->
+        </div>
+        <button class="button">Devam Et</button>
+        <a href="#" class="skip">Tanıtımı Geç</a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let currentStep = 1;
+
+            $('.button').on('click', function() {
+                if (currentStep < 3) {
+                    currentStep++;
+                    updateProgress();
+                } else {
+                    alert('Onboarding tamamlandı!');
+                }
+            });
+
+            $('.skip').on('click', function(e) {
+                e.preventDefault();
+                alert('Tanıtım geçildi!');
+            });
+
+            function updateProgress() {
+                $('.step').removeClass('active');
+                $(`.step:nth-child(${2 * currentStep - 1})`).addClass('active');
+            }
+        });
+    </script>
+</body>
+</html>
