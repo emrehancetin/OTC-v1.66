@@ -54,21 +54,22 @@
             background-color: #2ecc71;
             color: white;
             border: none;
-            padding: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
             width: 100%;
             font-size: 18px;
             border-radius: 5px;
             margin-bottom: 20px;
             cursor: pointer;
-        }
-        .button a{
-            color: white;
             text-decoration: none;
+            text-align: center;
         }
         .skip {
             text-align: center;
             color: white;
             text-decoration: none;
+            display: block;
+            width: 100%;
         }
     </style>
 </head>
@@ -84,7 +85,8 @@
         <div class="content">
             <!-- Content for each step will go here -->
         </div>
-        <button class="button"><a href="Main-Onboarding-2.html">Devam Et</a></button>
+        <!--<button class="button"><a href="Main-Onboarding-2.html">Devam Et</a></button>-->
+        <a href="Main-Onboarding-2.html" class="button">Devam Et</a>
         <a href="#" class="skip">Tanıtımı Geç</a>
     </div>
 
@@ -95,7 +97,7 @@
 
             $('.skip').on('click', function(e) {
                 e.preventDefault();
-                alert('Tanıtım geçildi!');
+                //alert('Tanıtım geçildi!');
             });
 
             function updateProgress() {
