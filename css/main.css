@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v61_436 {
+  width: 390px;
+  height: 844px;
+  background: linear-gradient(rgba(42,53,65,1), rgba(43,80,89,1));
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+
+.Polygon1{
+  animation: breathe 5s ease infinite;
+  padding: 0;
+  /*transform: rotate(45deg);*/
+  /*animation: ease-in-out;*/
+}
+
+.Polygon1::before {
+  content: '';
+  position: absolute;
+  top: 15px; /* Gölgeyi biraz aşağı kaydır */
+  left: 27px; /* Gölgeyi biraz sağa kaydır */
+  right: 27px; /* Gölgeyi sağdan da içeri çek */
+  bottom: 25px; /* Gölgeyi alttan da içeri çek */
+  background-color: transparent;
+  border-radius: 10px;
+  transform: rotate(45deg); /* Gölgeyi elmas şekline çevirmek için 45 derece döndür */
+  /*box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);*/
+  animation: breatheShadow 5s ease-in-out infinite;
+  pointer-events: none; /* Gölgeye tıklamayı engelle */
+}
+
+.StepperEllipse div{
+ font-size: 25px;
+  
+}
+@keyframes breathe {
+  0% {
+    transform:translateY(0);
+    
+  }
+  40% {
+    transform: translateY(-10px);
+    
+  }
+  60% {
+    transform: translateY(-10px); /* Bir süre yukarıda kalma hissi */
+  }
+  80% {
+    transform: translateY(0);
+    
+  }
+  100% {
+    transform: translateY(0);
+    
+  }
+}
+
+@keyframes breatheShadow {
+  0% {
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  40% {
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  60% {
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
+  80% {
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  }
+  100% {
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
