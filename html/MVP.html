@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTC Opsiyon Formu Oluştur</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            /*background-color: #2ecc71;*/
+            /*border-radius: 50%;*/
+        }
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .form-label-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            /*background-color: #2ecc71;*/
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background-color: #34495e;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button.active {
+            background-color: #2ecc71;
+        }
+        .button.wide {
+            width: 48%;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: #34495e;
+            color: white;
+            font-size: 16px;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 20px;
+            border: none;
+            background-color: #95a5a6;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #34495e;
+            padding: 10px;
+        }
+        .nav-item {
+            width: 75px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-item-img{
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+        }
+        .nav-logo {
+            width: 80px;
+            height: 80px;
+           /* background-color: #2ecc71;*/
+           margin-top: -75px;
+            border-radius: 50%;
+            transform: translateY(40px);
+        }
+        #ai{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .nav-logo.grow-move{
+            animation: grow 1s ease-in-out, move 1s ease-in-out;
+        }
+        video{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-icon"><img class="header-icon" src="../images/File-edit.png" alt=""></div>
+            <h1 class="header-title">OTC Opsiyon Formu Oluştur</h1>
+        </div>
+        <form id="otc-form">
+            <div class="form-group">
+                <label class="form-label">
+                    <div class="form-label-icon"><img  class= "form-label-icon" src="../images/Sembol.png" alt=""></div>
+                    Sembol
+                </label>
+                <div class="button-group">
+                    <button type="button" class="button active">EURUSD</button>
+                    <button type="button" class="button">XAGUSD</button>
+                    <button type="button" class="button"><img class="form-label-icon" src="../images/Search.png" alt=""></button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    <div class="form-label-icon"><img class="form-label-icon" src="../images/Regular-Payment.png" alt=""></div>
+                    OTC Opsiyon Tipi    
+                </label>
+                <div class="button-group">
+                    <button type="button" class="button wide active">Call</button>
+                    <button type="button" class="button wide">Put</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    <div class="form-label-icon"><img class="form-label-icon" src="../images/Transfer.png" alt=""></div>
+                    Alış Tipi
+                </label>
+                <div class="button-group">
+                    <button type="button" class="button wide active" style="background-color: #27ae60;">Alış Emri</button>
+                    <button type="button" class="button wide" style="background-color: #c0392b;">Satış Emri</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    <div class="form-label-icon"><img class="form-label-icon" src="../images/VadeTarihi.png" alt=""></div>
+                    Vade Tarihi
+                </label>
+                <div class="button-group">
+                    <button type="button" class="button active">19-11-2024</button>
+                    <button type="button" class="button">19-01-25</button>
+                    <button type="button" class="button"><img class="form-label-icon" src="../images/Search.png" alt=""></button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    <div class="form-label-icon"><img class="form-label-icon" src="../images/Buyukluk.png" alt=""></div>
+                    Büyüklük
+                </label>
+                <input type="text" class="input-field" placeholder="0.01-75.26">
+            </div>
+            <button type="submit" class="submit-button">Formu Gönder</button>
+        </form>
+    </div>
+    <div class="navbar">
+        <a href="Home.html" class="nav-item active">
+            <img class="nav-item-img" src="../images/Anasayfa.png" alt=""> Ana Sayfa</a>
+        <div class="nav-logo scroll-button" id="ai">
+            <video class="nav-logo scroll-button" id="ai" src="../video.mp4"  autoplay muted loop></video>  
+        </div>
+        <a href="#" class="nav-item">
+            <img class="nav-item-img" src="../images/Egitim.png">Eğitim </a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.button').on('click', function() {
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('#otc-form').on('submit', function(e) {
+                e.preventDefault();
+                alert('Form gönderildi!');
+            });
+        });
+
+        window.onload = function() {
+        const button = document.querySelector('.scroll-button');
+
+        // Sayfa yüklendiğinde butonun hem büyümesi hem de kayması
+        button.classList.add('grow-move');
+        };
+    </script>
+</body>
+</html>

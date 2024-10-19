@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teminat Hesabım</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         body, html {
             height: 100%;
@@ -46,6 +49,7 @@
             font-weight: bold;
             margin-bottom: 10px;
             display: inline-block ;
+            font-family: Aleo;
         }
         .detail-image{
             width: 28px;
@@ -168,6 +172,7 @@
             margin-top: -40px;
             text-align: center;
         }
+        
     </style>
 </head>
 <body>
@@ -212,12 +217,14 @@
             <hr class="line">
             <div class="view-history">Bütün Geçmişi Gör</div>
         </div>
+       <!-- API will come here.-->
     </div>
+   
     <div class="navbar">
         <a href="#" class="nav-item active">
             <img class="nav-item-img" src="../images/Anasayfa.png" alt=""> Ana Sayfa</a>
-        <a href="#">
-            <img class="nav-item-img plus-button" src="../images/Plus Button.png" alt=""></a>
+        <a href="MVP.html">
+            <img class="nav-item-img plus-button" id="goToNextPage" src="../images/Plus Button.png" alt=""></a>
         <a href="#" class="nav-item">
             <img class="nav-item-img" src="../images/Egitim.png">Eğitim </a>
     </div>
@@ -234,8 +241,8 @@
             });
 
             $('.plus-button').on('click', function(e) {
-                e.preventDefault();
-                alert('Yeni işlem ekleniyor...');
+                //e.preventDefault();
+                //alert('Yeni işlem ekleniyor...');
             });
 
             $('.nav-item').on('click', function(e) {
@@ -244,6 +251,7 @@
                 $(this).addClass('active');
             });
         });
+
     </script>
 </body>
 </html>
