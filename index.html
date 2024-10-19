@@ -54,6 +54,9 @@
         transform: rotate(45deg);
         margin: 0 auto 40px;
         box-shadow: 0 0 20px rgba(76, 217, 100, 0.5);
+        animation: breathe 3s ease-in-out infinite;
+        position: relative;
+        top:-25px;
       }
       .login-button{
         background-color: #4cd964;
@@ -79,6 +82,31 @@
         text-align: center;
         margin-top: 20px;
       }
+
+
+      /* EFEKT */
+      .Polygon1{
+        animation: breathe 7s ease-in-out infinite;
+        /*transform: rotate(45deg);*/
+        /*animation: ease-in-out;*/
+      }
+      @keyframes breathe {
+  0% {
+    transform: rotate(45deg) translate(0,0);
+  }
+  40% {
+    transform: rotate(45deg) translate(10px,10px);
+  }
+  60% {
+   /* transform: rotate(45deg) translate(15px,15px); /* Bir süre yukarıda kalma hissi */
+  }
+  80% {
+    transform: rotate(45deg) translate(10px,10px);
+  }
+  100% {
+    transform: rotate(45deg) translate(0,0);
+  }
+}
     </style>
   </head>
   <body>
@@ -90,7 +118,7 @@
         </div>
         <div class="main-text">Opsiyon evreninde kolayca nefes al.</div>
       </div>
-      <div class="diamond"></div>
+      <div class="diamond "></div>
     <!-- <button class="login-button"><a href="html/Main-Onboarding-1.html">Fibabankayla Giriş Yap</a></button>-->
      <a class="login-button" href="html/Main-Onboarding-1.html">Fibabankayla Giriş Yap</a>
       <a href="" class="create-account">Hesap Oluştur</a>
