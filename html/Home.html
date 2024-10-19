@@ -66,7 +66,7 @@
         .stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 20px 10px;
             margin-bottom: 20px;
         }
         .stat-item {
@@ -86,8 +86,12 @@
         }
 
         .time-periods {
+            text-align: center;
             display: flex;
-            justify-content: space-between;
+            /*justify-content: space-between;*/
+            gap:15px;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
         }
         /*ilk eleman soldan aralık ver ve diğer periodlar arası boşluğu azalt*/
@@ -117,6 +121,8 @@
             color: #A3EFBF;
             cursor: pointer;
             text-align: right;
+            position: relative;
+            right: 5px;
         }
         .navbar {
             position: fixed;
@@ -133,6 +139,15 @@
             text-align: center;
             color: white;
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-item-img{
+            width: 24px;
+            height: 24px;
+            padding: 5px;
         }
         .nav-item.active {
             color: #2ecc71;
@@ -195,8 +210,10 @@
         </div>
     </div>
     <div class="navbar">
-        <a href="#" class="nav-item active">Ana Sayfa</a>
-        <a href="#" class="plus-button">+</a>
+        <a href="#" class="nav-item active">
+            <img class="nav-item-img" src="../images/Anasayfa.png" alt=""> Ana Sayfa</a>
+        <a href="#">
+            <img class="nav-item-img" src="../images/Plus Button.png" alt=""></a>
         <a href="#" class="nav-item">Eğitim</a>
     </div>
 
