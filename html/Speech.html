@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Wallpaper</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #1a5f7a, #00b894);
+        }
+        .logo {
+            width: 60%;
+            /*max-width: 300px;*/
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        .title {
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Talk%20With%20AI-ytkmJou34orSxGUVANBjz6l5LU5Fjc.png" alt="Energy Wave Logo" class="logo">
+    </div>
+</body>
+</html>

@@ -78,6 +78,7 @@
             background-color: #34495e;
             color: white;
             font-size: 16px;
+            text-align: center;
         }
         .submit-button {
             width: 100%;
@@ -154,7 +155,7 @@
                     Sembol
                 </label>
                 <div class="button-group">
-                    <button type="button" class="button active">EURUSD</button>
+                    <button type="button" class="button">EURUSD</button>
                     <button type="button" class="button">XAGUSD</button>
                     <button type="button" class="button"><img class="form-label-icon" src="../images/Search.png" alt=""></button>
                 </div>
@@ -165,7 +166,7 @@
                     OTC Opsiyon Tipi    
                 </label>
                 <div class="button-group">
-                    <button type="button" class="button wide active">Call</button>
+                    <button type="button" class="button wide">Call</button>
                     <button type="button" class="button wide">Put</button>
                 </div>
             </div>
@@ -175,8 +176,8 @@
                     Alış Tipi
                 </label>
                 <div class="button-group">
-                    <button type="button" class="button wide active" style="background-color: #27ae60;">Alış Emri</button>
-                    <button type="button" class="button wide" style="background-color: #c0392b;">Satış Emri</button>
+                    <button type="button" class="button wide " style="background-color: #6f907b;">Alış Emri</button>
+                    <button type="button" class="button wide" style="background-color: #C76A6A;">Satış Emri</button>
                 </div>
             </div>
             <div class="form-group">
@@ -185,7 +186,7 @@
                     Vade Tarihi
                 </label>
                 <div class="button-group">
-                    <button type="button" class="button active">19-11-2024</button>
+                    <button type="button" class="button">19-11-2024</button>
                     <button type="button" class="button">19-01-25</button>
                     <button type="button" class="button"><img class="form-label-icon" src="../images/Search.png" alt=""></button>
                 </div>
@@ -193,7 +194,7 @@
             <div class="form-group">
                 <label class="form-label">
                     <div class="form-label-icon"><img class="form-label-icon" src="../images/Buyukluk.png" alt=""></div>
-                    Büyüklük
+                    Miktar
                 </label>
                 <input type="text" class="input-field" placeholder="0.01-75.26">
             </div>
@@ -204,13 +205,19 @@
         <a href="Home.html" class="nav-item active">
             <img class="nav-item-img" src="../images/Anasayfa.png" alt=""> Ana Sayfa</a>
         <div class="nav-logo scroll-button" id="ai">
-            <video class="nav-logo scroll-button" id="ai" src="../video.mp4"  autoplay muted loop></video>  
+            <a href="Speech.html" class="speech-ai"><video class="nav-logo scroll-button" id="ai" src="../video.mp4"  autoplay muted loop></video>  </a>
         </div>
         <a href="#" class="nav-item">
             <img class="nav-item-img" src="../images/Egitim.png">Eğitim </a>
     </div>
 
     <script>
+        let container = document.querySelector('.container');
+        let video = document.querySelector('video');
+        container.onclick = function() {
+            video.style.opacity=0.5;
+            video.pause();
+        };
         $(document).ready(function() {
             $('.button').on('click', function() {
                 $(this).siblings().removeClass('active');
